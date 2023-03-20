@@ -42,5 +42,17 @@ public class winappclass {
 		driver.findElementByName("OK").click();
 	}
 	
+	@Test
+	public void writenotes() throws InterruptedException{
+		driver.findElementByName("Text Editor").sendKeys("I am starting to automate notepad");
+		Thread.sleep(2000);
+		String Actual_Text = driver.findElementByName("Text Editor").getText();
+		String Expected_Text = "I am starting to automate notepad";
+		Thread.sleep(2000);
+		Assert.assertEquals(Actual_Text, Expected_Text);
+		System.out.println(Actual_Text);
+		
+	}
+	
 	
 }
